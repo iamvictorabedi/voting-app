@@ -7,7 +7,7 @@ function VoterView(props) {
 
     return (
         <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={`/img/${candidate.image}`} />
+            <Card.Img variant="top" src={`/src/img/${candidate.image}`} />
             <Card.Body>
                 <Card.Title>{candidate.name}</Card.Title>
                 <Button variant="success" onClick={() => incrementVoteCount(candidate._id)}>

@@ -1,35 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import presidentsJson from "./data/president.json";
+import spokesPersonsJson from "./data/spokesperson.json";
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
 import VoterView from "./component/VoterView";
 
 function PresidentView() {
-  let [presidents, setCandidates] = useState([]);
+  let [spokesPersons, setCandidates] = useState([]);
 
   useEffect(() => {
-    setCandidates(presidentsJson);
+    setCandidates(spokesPersonsJson);
   }, []);
 
   function incrementVoteCount(presidentId) {
-    presidents = presidents.map((president) => {
-      if (president._id === presidentId) {
-        president.votes = president.votes + 1;
+    spokesPersons = spokesPersons.map((spokeperson) => {
+      if (spokeperson._id === presidentId) {
+        spokeperson.votes = spokeperson.votes + 1;
       }
-      return president;
+      return spokeperson;
     });
-    setCandidates(presidents);
+    setCandidates(spokesPersons);
   }
 
   return (
       <Container className="app">
         <Row>
-          {presidents.map((president) => {
+          {spokesPersons.map((spokeperson) => {
             return (
                 <Col md={4}>
                   <VoterView
-                      candidate={president}
+                      candidate={spokeperson}
                       incrementVoteCount={(presidentId) => incrementVoteCount(presidentId)}
                   />
                 </Col>
