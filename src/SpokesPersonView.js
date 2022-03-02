@@ -5,7 +5,7 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
 import VoterView from "./component/VoterView";
 
-function App() {
+function PresidentView() {
   let [presidents, setCandidates] = useState([]);
 
   useEffect(() => {
@@ -39,4 +39,4 @@ function App() {
       </Container>
   );
 }
-export default App;
+export default PresidentView;
